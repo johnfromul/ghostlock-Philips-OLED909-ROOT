@@ -1,62 +1,71 @@
-/* Philips 65OLED909 / TPM231WW_R.201.100.146.220.
- *
- * Kernel and BTF from the exact OTA boot image (TPM231WW R.201.100.146.220).
- * All off_* values are offset from kimage_text_base = _stext before KASLR,
- * verified against /proc/kallsyms link-time addresses and BTF dump.
- * ashmem function offsets identify code bodies; the live fops->compat_ioctl
- * callback points to compat_ashmem_ioctl via a CFI jump table (CFI jumptable).
- * copy_splice_read = 0 means unavailable in this kernel.
+/* Philips OLED909 / TPM231WW R.201.100.146.220: ANALYSIS ONLY.
+ * Source: exact offline boot Image, reconstructed kallsyms and embedded BTF.
+ * No /proc/kallsyms or runtime validation is claimed.
+ * All off_* values use _text = 0xffffffc008000000, not _stext.
+ * This file requires the companion integration patch (unverified route enums).
+ * Unknown RAM bounds and allocator geometry must not be replaced with TCL values.
+ * Kernel SHA-256: 56e9610c841ac471bb3713b510c8da7f74066d90970f6dfd090087550101f68e
  */
-OFFSETS_ENTRY("5.15.180-android14-11",
-  /* Pentonic mt5897 / merak platform. Physical base from firmware inference;
-   * not observed at runtime due to SELinux Enforcing, Seccomp:0. */
+OFFSETS_ENTRY("5.15.180-android14-11-00042-g766efc243647-dirty",
+
+  /* Analysis-only integration; zero geometry values below are UNKNOWN, not measured. */
+  .analysis_only = 0x1,
+  .analysis_blocker = "Philips routes, runtime RAM bounds, SLUB geometry and CFI callback semantics are unverified; static firmware physical-load inference is not runtime proof",
+  .stack_overlay_route = GHOST_STACK_OVERLAY_UNVERIFIED,
+  .reclaim_route = GHOST_RECLAIM_UNVERIFIED,
+
+  /* Static address metadata. phys_offset and kernel_phys_load are firmware-derived, not live observations. */
   .kernel_phys_load = 0x26000000ULL,
+  .phys_offset = 0x20000000ULL,
+  .page_offset = 0xffffff8000000000ULL,
+  .direct_map_base = 0xffffff8000000000ULL,
+  .direct_map_end = 0x0ULL,
+  .vmemmap_start = 0xfffffffe00000000ULL,
+  .kernelsnitch_identity_start = 0x0ULL,
+  .kernelsnitch_identity_end = 0x0ULL,
+  .kimage_text_base = 0xffffffc008000000ULL,
 
-  /* _stext is the canonical base for all off_*. */
-  .kimage_text_base = 0xffffffc008010000ULL,
+  /* BTF object size only; slab order/SLUB values remain unknown and are blocked by analysis_only. */
+  .mm_struct_size = 0x3e0,
+  .mm_slab_order = 0x0,
+  .slub_min_partial = 0x0,
+  .slub_cpu_partial = 0x0,
 
-  /* --- Global symbol offsets from _stext --- */
-  .off_init_task = 0x0298c4c0ULL,
-  .off_init_cred = 0x0294e578ULL,
-  .off_init_uts_ns = 0x029e2a10ULL,
-  .off_empty_zero_page = 0x02a83000ULL,
-  .off_root_task_group = 0x02a88400ULL,
-  .off_selinux_enforcing = 0x02ada068ULL,
-  .off_selinux_enforcing_device = 0x02ada068ULL,
-  .off_kptr_restrict = 0x0284db84ULL,
-  .off_selinux_blob_sizes = 0x01bf76f0ULL,
-  .off_security_hook_heads = 0x01bf7018ULL,
-  .off_kmalloc_caches = 0x01bf8278ULL,
-  .off_anon_pipe_buf_ops = 0x01a356b0ULL,
+  /* Symbol offsets from _text. copy_splice_read=0 means absent. Ashmem function values are bodies, not CFI JT pointers. */
+  .off_init_task = 0x299c4c0ULL,
+  .off_init_cred = 0x295e578ULL,
+  .off_init_uts_ns = 0x29f2a10ULL,
+  .off_empty_zero_page = 0x2a93000ULL,
+  .off_root_task_group = 0x2a98400ULL,
+  .off_selinux_enforcing = 0x2aea068ULL,
+  .off_selinux_enforcing_device = 0x2aea068ULL,
+  .off_kptr_restrict = 0x285db84ULL,
+  .off_selinux_blob_sizes = 0x1c076f0ULL,
+  .off_security_hook_heads = 0x1c07018ULL,
+  .off_kmalloc_caches = 0x1c08278ULL,
+  .off_anon_pipe_buf_ops = 0x1a456b0ULL,
+  .off_ashmem_misc_fops = 0x29e8f50ULL,
+  .off_ashmem_fops = 0x1bb6730ULL,
+  .off_ashmem_ioctl = 0x106e840ULL,
+  .off_ashmem_compat_ioctl = 0x106f244ULL,
+  .off_ashmem_mmap = 0x106f298ULL,
+  .off_ashmem_open = 0x106f548ULL,
+  .off_ashmem_release = 0x106f5e0ULL,
+  .off_ashmem_show_fdinfo = 0x106f6fcULL,
+  .off_configfs_read_iter = 0x658224ULL,
+  .off_configfs_bin_write_iter = 0x658ad4ULL,
+  .off_copy_splice_read = 0x0ULL,
+  .off_noop_llseek = 0x535450ULL,
+  .off_cap_capable_active = 0x86750cULL,
+  .off_slide_nfulnl_logger = 0x2861ab0ULL,
+  .off_slide_loggers_0_1 = 0x28619e0ULL,
+  .off_slide_boot_id = 0x2b45929ULL,
+  .off_init_user_ns = 0x2a15250ULL,
+  .off_init_user_ns_device = 0x2a15250ULL,
+  .off_system_unbound_wq = 0x2860460ULL,
+  .off_call_usermodehelper_exec_work = 0x1830f8ULL,
 
-  /* &ashmem_misc.fops: ashmem_misc + BTF offsetof(miscdevice,fops)=0x10. */
-  .off_ashmem_misc_fops = 0x029d8f50ULL,
-  .off_ashmem_fops = 0x01ba6730ULL,
-
-  /* ashmem function offsets (code bodies; fops->compat_ioctl reaches via CFI JT). */
-  .off_ashmem_ioctl = 0x0105e840ULL,
-  .off_ashmem_compat_ioctl = 0x0105f244ULL,
-  .off_ashmem_mmap = 0x0105f298ULL,
-  .off_ashmem_open = 0x0105f548ULL,
-  .off_ashmem_release = 0x0105f5e0ULL,
-  .off_ashmem_show_fdinfo = 0x0105f6fcULL,
-
-  .off_configfs_read_iter = 0x00648224ULL,
-  .off_configfs_bin_write_iter = 0x00648ad4ULL,
-  .off_copy_splice_read = 0,
-  .off_noop_llseek = 0x00525450ULL,
-  .off_cap_capable_active = 0x0085750cULL,
-  .off_slide_nfulnl_logger = 0x02851ab0ULL,
-  .off_slide_loggers_0_1 = 0x028519e0ULL,
-  .off_slide_boot_id = 0x02b35929ULL,
-  .off_init_user_ns = 0x02a05250ULL,
-  .off_init_user_ns_device = 0x02a05250ULL,
-  .off_system_unbound_wq = 0x02850460ULL,
-  .off_call_usermodehelper_exec_work = 0x001730f8ULL,
-
-  /* --- BTF struct field offsets (Philips mt5897 kernel) --- */
-
-  /* task_struct fields (verified against BTF). */
+  /* BTF task_struct and mm_struct fields. */
   .task_usage = 0x38,
   .task_cpu = 0x58,
   .task_prio = 0x7c,
@@ -77,9 +86,10 @@ OFFSETS_ENTRY("5.15.180-android14-11",
   .task_comm = 0x810,
   .task_tasks = 0x538,
   .task_seccomp = 0x8c8,
+  .mm_owner = 0x348,
 
-  /* rt_mutex_waiter (BTF type 7842, size=0x58). */
-  .waiter_compact = 1,
+  /* BTF rt_mutex_waiter and rt_mutex_base. */
+  .waiter_compact = 0x1,
   .waiter_size = 0x58,
   .waiter_pi_tree = 0x18,
   .waiter_task = 0x30,
@@ -88,17 +98,15 @@ OFFSETS_ENTRY("5.15.180-android14-11",
   .waiter_prio = 0x44,
   .waiter_deadline = 0x48,
   .waiter_ww_ctx = 0x50,
-
-  /* rt_mutex_base (BTF type 7844, size=0x20). */
   .rt_mutex_size = 0x20,
-  .rt_mutex_waiters = 0x08,
+  .rt_mutex_waiters = 0x8,
   .rt_mutex_owner = 0x18,
 
-  /* cred (BTF type 612, size=0xb0). */
-  .cred_usage = 0x00,
-  .cred_uid = 0x04,
-  .cred_gid = 0x08,
-  .cred_suid = 0x0c,
+  /* BTF cred layout. */
+  .cred_usage = 0x0,
+  .cred_uid = 0x4,
+  .cred_gid = 0x8,
+  .cred_suid = 0xc,
   .cred_sgid = 0x10,
   .cred_euid = 0x14,
   .cred_egid = 0x18,
@@ -115,13 +123,48 @@ OFFSETS_ENTRY("5.15.180-android14-11",
   .cred_user_ns = 0x88,
   .cred_ucounts = 0x90,
   .cred_group_info = 0x98,
+  .cred_size = 0xb0,
 
-  /* struct page: mm_struct_size=0x3e0 -> slab order 2 (size=1024). */
-  .mm_struct_size = 0x3e0,
+  /* BTF page layout; slab_cache is the member of struct page in this 5.15 build. */
   .struct_page_size = 0x40,
+  .struct_page_compound_head = 0x8,
+  .struct_page_type = 0x30,
+  .struct_slab_cache = 0x18,
 
-  /* fops table layout. */
-  .fops_llseek = 0x08,
+  /* BTF supporting objects. All sizes and offsets are explicit; no layout fallback is required. */
+  .task_security_size = 0x18,
+  .task_security_osid = 0x0,
+  .task_security_sid = 0x4,
+  .user_struct_size = 0xa8,
+  .user_struct_count = 0x0,
+  .ucounts_size = 0x90,
+  .ucounts_ns = 0x10,
+  .ucounts_count = 0x1c,
+  .group_info_usage = 0x0,
+  .group_info_ngroups = 0x4,
+  .group_info_gid = 0x8,
+  .user_ns_size = 0x290,
+  .user_ns_gid_map = 0x48,
+  .user_ns_projid_map = 0x90,
+  .user_ns_ns = 0xf0,
+  .user_ns_ucounts = 0x208,
+  .user_ns_ucount_max = 0x210,
+  .user_ns_ucount_max_count = 0xe,
+  .ns_common_count = 0x14,
+  .uid_gid_map_size = 0x48,
+  .uid_gid_map_nr_extents = 0x0,
+  .uid_gid_map_extent = 0x8,
+
+  /* Non-overlapping local layout slots. These do not establish allocator/reclaim compatibility. */
+  .payload_fake_group_info = 0xdb0,
+  .payload_fake_cred = 0xe00,
+  .payload_fake_security = 0xec0,
+  .payload_fake_user = 0xee0,
+  .payload_fake_ucounts = 0xf90,
+  .payload_fake_user_ns = 0x1200,
+
+  /* BTF file_operations. */
+  .fops_llseek = 0x8,
   .fops_read = 0x10,
   .fops_write = 0x18,
   .fops_read_iter = 0x20,
@@ -133,4 +176,4 @@ OFFSETS_ENTRY("5.15.180-android14-11",
   .fops_release = 0x80,
   .fops_splice_read = 0xc8,
   .fops_show_fdinfo = 0xe0,
-)
+),

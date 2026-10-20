@@ -1,0 +1,1140 @@
+{
+  "source": "C:\\Users\\admin\\AppData\\Local\\hermes\\cache\\scratch\\ghostlock-analysis\\src\\devices\\philips_909_tpm231\\offsets.h",
+  "source_sha256": "041f21992005effd4e14cc00f917a3b7fa2916947253ea79c61be280fa39a95b",
+  "repository_commit": "1812ef35214f51ab7b8c37e935a62b074c66c141",
+  "scope": "Static review only. No exploit or device operation executed. Original profile not modified.",
+  "explicit_numeric_fields": 100,
+  "checked_explicit_fields": 99,
+  "explicit_checks": [
+    {
+      "field": "off_init_task",
+      "value": 43566272,
+      "line": 19,
+      "expected": 43566272,
+      "matches": true,
+      "evidence": "init_task"
+    },
+    {
+      "field": "off_init_cred",
+      "value": 43312504,
+      "line": 20,
+      "expected": 43312504,
+      "matches": true,
+      "evidence": "init_cred"
+    },
+    {
+      "field": "off_init_uts_ns",
+      "value": 43919888,
+      "line": 21,
+      "expected": 43919888,
+      "matches": true,
+      "evidence": "init_uts_ns"
+    },
+    {
+      "field": "off_empty_zero_page",
+      "value": 44576768,
+      "line": 22,
+      "expected": 44576768,
+      "matches": true,
+      "evidence": "empty_zero_page"
+    },
+    {
+      "field": "off_root_task_group",
+      "value": 44598272,
+      "line": 23,
+      "expected": 44598272,
+      "matches": true,
+      "evidence": "root_task_group"
+    },
+    {
+      "field": "off_selinux_enforcing",
+      "value": 44933224,
+      "line": 24,
+      "expected": 44933224,
+      "matches": true,
+      "evidence": "selinux_state.enforcing"
+    },
+    {
+      "field": "off_selinux_enforcing_device",
+      "value": 44933224,
+      "line": 25,
+      "expected": 44933224,
+      "matches": true,
+      "evidence": "selinux_state.enforcing"
+    },
+    {
+      "field": "off_kptr_restrict",
+      "value": 42261380,
+      "line": 26,
+      "expected": 42261380,
+      "matches": true,
+      "evidence": "kptr_restrict"
+    },
+    {
+      "field": "off_selinux_blob_sizes",
+      "value": 29325040,
+      "line": 27,
+      "expected": 29325040,
+      "matches": true,
+      "evidence": "selinux_blob_sizes"
+    },
+    {
+      "field": "off_security_hook_heads",
+      "value": 29323288,
+      "line": 28,
+      "expected": 29323288,
+      "matches": true,
+      "evidence": "security_hook_heads"
+    },
+    {
+      "field": "off_kmalloc_caches",
+      "value": 29327992,
+      "line": 29,
+      "expected": 29327992,
+      "matches": true,
+      "evidence": "kmalloc_caches"
+    },
+    {
+      "field": "off_anon_pipe_buf_ops",
+      "value": 27481776,
+      "line": 30,
+      "expected": 27481776,
+      "matches": true,
+      "evidence": "anon_pipe_buf_ops"
+    },
+    {
+      "field": "off_ashmem_misc_fops",
+      "value": 43880272,
+      "line": 33,
+      "expected": 43880272,
+      "matches": true,
+      "evidence": "&ashmem_misc.fops"
+    },
+    {
+      "field": "off_ashmem_fops",
+      "value": 28993328,
+      "line": 34,
+      "expected": 28993328,
+      "matches": true,
+      "evidence": "ashmem_fops"
+    },
+    {
+      "field": "off_ashmem_ioctl",
+      "value": 17164352,
+      "line": 37,
+      "expected": 17164352,
+      "matches": true,
+      "evidence": "ashmem_ioctl"
+    },
+    {
+      "field": "off_ashmem_compat_ioctl",
+      "value": 17166916,
+      "line": 38,
+      "expected": 17166916,
+      "matches": true,
+      "evidence": "compat_ashmem_ioctl (function body)"
+    },
+    {
+      "field": "off_ashmem_mmap",
+      "value": 17167000,
+      "line": 39,
+      "expected": 17167000,
+      "matches": true,
+      "evidence": "ashmem_mmap"
+    },
+    {
+      "field": "off_ashmem_open",
+      "value": 17167688,
+      "line": 40,
+      "expected": 17167688,
+      "matches": true,
+      "evidence": "ashmem_open"
+    },
+    {
+      "field": "off_ashmem_release",
+      "value": 17167840,
+      "line": 41,
+      "expected": 17167840,
+      "matches": true,
+      "evidence": "ashmem_release"
+    },
+    {
+      "field": "off_ashmem_show_fdinfo",
+      "value": 17168124,
+      "line": 42,
+      "expected": 17168124,
+      "matches": true,
+      "evidence": "ashmem_show_fdinfo"
+    },
+    {
+      "field": "off_configfs_read_iter",
+      "value": 6586916,
+      "line": 44,
+      "expected": 6586916,
+      "matches": true,
+      "evidence": "configfs_read_iter"
+    },
+    {
+      "field": "off_configfs_bin_write_iter",
+      "value": 6589140,
+      "line": 45,
+      "expected": 6589140,
+      "matches": true,
+      "evidence": "configfs_bin_write_iter"
+    },
+    {
+      "field": "off_copy_splice_read",
+      "value": 0,
+      "line": 46,
+      "expected": 0,
+      "matches": true,
+      "evidence": "copy_splice_read"
+    },
+    {
+      "field": "off_noop_llseek",
+      "value": 5395536,
+      "line": 47,
+      "expected": 5395536,
+      "matches": true,
+      "evidence": "noop_llseek"
+    },
+    {
+      "field": "off_cap_capable_active",
+      "value": 8746252,
+      "line": 48,
+      "expected": 8746252,
+      "matches": true,
+      "evidence": "cap_capable (function body; runtime active hook not observed)"
+    },
+    {
+      "field": "off_slide_nfulnl_logger",
+      "value": 42277552,
+      "line": 49,
+      "expected": 42277552,
+      "matches": true,
+      "evidence": "nfulnl_logger"
+    },
+    {
+      "field": "off_slide_loggers_0_1",
+      "value": 42277344,
+      "line": 50,
+      "expected": 42277344,
+      "matches": true,
+      "evidence": "&loggers[0][1]"
+    },
+    {
+      "field": "off_slide_boot_id",
+      "value": 45308201,
+      "line": 51,
+      "expected": 45308201,
+      "matches": true,
+      "evidence": "sysctl_bootid"
+    },
+    {
+      "field": "off_init_user_ns",
+      "value": 44061264,
+      "line": 52,
+      "expected": 44061264,
+      "matches": true,
+      "evidence": "init_user_ns"
+    },
+    {
+      "field": "off_init_user_ns_device",
+      "value": 44061264,
+      "line": 53,
+      "expected": 44061264,
+      "matches": true,
+      "evidence": "init_user_ns"
+    },
+    {
+      "field": "off_system_unbound_wq",
+      "value": 42271840,
+      "line": 54,
+      "expected": 42271840,
+      "matches": true,
+      "evidence": "system_unbound_wq"
+    },
+    {
+      "field": "off_call_usermodehelper_exec_work",
+      "value": 1519864,
+      "line": 55,
+      "expected": 1519864,
+      "matches": true,
+      "evidence": "call_usermodehelper_exec_work"
+    },
+    {
+      "field": "task_usage",
+      "value": 56,
+      "line": 60,
+      "expected": 56,
+      "matches": true,
+      "evidence": "BTF task_struct.usage"
+    },
+    {
+      "field": "task_cpu",
+      "value": 88,
+      "line": 61,
+      "expected": 88,
+      "matches": true,
+      "evidence": "BTF task_struct.cpu"
+    },
+    {
+      "field": "task_prio",
+      "value": 124,
+      "line": 62,
+      "expected": 124,
+      "matches": true,
+      "evidence": "BTF task_struct.prio"
+    },
+    {
+      "field": "task_normal_prio",
+      "value": 132,
+      "line": 63,
+      "expected": 132,
+      "matches": true,
+      "evidence": "BTF task_struct.normal_prio"
+    },
+    {
+      "field": "task_sched_task_group",
+      "value": 832,
+      "line": 64,
+      "expected": 832,
+      "matches": true,
+      "evidence": "BTF task_struct.sched_task_group"
+    },
+    {
+      "field": "task_uclamp_req",
+      "value": 840,
+      "line": 65,
+      "expected": 840,
+      "matches": true,
+      "evidence": "BTF task_struct.uclamp_req"
+    },
+    {
+      "field": "task_uclamp",
+      "value": 848,
+      "line": 66,
+      "expected": 848,
+      "matches": true,
+      "evidence": "BTF task_struct.uclamp"
+    },
+    {
+      "field": "task_pi_lock",
+      "value": 2284,
+      "line": 67,
+      "expected": 2284,
+      "matches": true,
+      "evidence": "BTF task_struct.pi_lock"
+    },
+    {
+      "field": "task_pi_waiters",
+      "value": 2304,
+      "line": 68,
+      "expected": 2304,
+      "matches": true,
+      "evidence": "BTF task_struct.pi_waiters"
+    },
+    {
+      "field": "task_pi_top_task",
+      "value": 2320,
+      "line": 69,
+      "expected": 2320,
+      "matches": true,
+      "evidence": "BTF task_struct.pi_top_task"
+    },
+    {
+      "field": "task_pi_blocked_on",
+      "value": 2328,
+      "line": 70,
+      "expected": 2328,
+      "matches": true,
+      "evidence": "BTF task_struct.pi_blocked_on"
+    },
+    {
+      "field": "task_pid",
+      "value": 1600,
+      "line": 71,
+      "expected": 1600,
+      "matches": true,
+      "evidence": "BTF task_struct.pid"
+    },
+    {
+      "field": "task_tgid",
+      "value": 1604,
+      "line": 72,
+      "expected": 1604,
+      "matches": true,
+      "evidence": "BTF task_struct.tgid"
+    },
+    {
+      "field": "task_real_parent",
+      "value": 1616,
+      "line": 73,
+      "expected": 1616,
+      "matches": true,
+      "evidence": "BTF task_struct.real_parent"
+    },
+    {
+      "field": "task_atomic_flags",
+      "value": 1536,
+      "line": 74,
+      "expected": 1536,
+      "matches": true,
+      "evidence": "BTF task_struct.atomic_flags"
+    },
+    {
+      "field": "task_real_cred",
+      "value": 2040,
+      "line": 75,
+      "expected": 2040,
+      "matches": true,
+      "evidence": "BTF task_struct.real_cred"
+    },
+    {
+      "field": "task_cred",
+      "value": 2048,
+      "line": 76,
+      "expected": 2048,
+      "matches": true,
+      "evidence": "BTF task_struct.cred"
+    },
+    {
+      "field": "task_comm",
+      "value": 2064,
+      "line": 77,
+      "expected": 2064,
+      "matches": true,
+      "evidence": "BTF task_struct.comm"
+    },
+    {
+      "field": "task_tasks",
+      "value": 1336,
+      "line": 78,
+      "expected": 1336,
+      "matches": true,
+      "evidence": "BTF task_struct.tasks"
+    },
+    {
+      "field": "task_seccomp",
+      "value": 2248,
+      "line": 79,
+      "expected": 2248,
+      "matches": true,
+      "evidence": "BTF task_struct.seccomp"
+    },
+    {
+      "field": "waiter_pi_tree",
+      "value": 24,
+      "line": 84,
+      "expected": 24,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.pi_tree_entry"
+    },
+    {
+      "field": "waiter_task",
+      "value": 48,
+      "line": 85,
+      "expected": 48,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.task"
+    },
+    {
+      "field": "waiter_lock",
+      "value": 56,
+      "line": 86,
+      "expected": 56,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.lock"
+    },
+    {
+      "field": "waiter_wake_state",
+      "value": 64,
+      "line": 87,
+      "expected": 64,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.wake_state"
+    },
+    {
+      "field": "waiter_prio",
+      "value": 68,
+      "line": 88,
+      "expected": 68,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.prio"
+    },
+    {
+      "field": "waiter_deadline",
+      "value": 72,
+      "line": 89,
+      "expected": 72,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.deadline"
+    },
+    {
+      "field": "waiter_ww_ctx",
+      "value": 80,
+      "line": 90,
+      "expected": 80,
+      "matches": true,
+      "evidence": "BTF rt_mutex_waiter.ww_ctx"
+    },
+    {
+      "field": "cred_usage",
+      "value": 0,
+      "line": 98,
+      "expected": 0,
+      "matches": true,
+      "evidence": "BTF cred.usage"
+    },
+    {
+      "field": "cred_uid",
+      "value": 4,
+      "line": 99,
+      "expected": 4,
+      "matches": true,
+      "evidence": "BTF cred.uid"
+    },
+    {
+      "field": "cred_gid",
+      "value": 8,
+      "line": 100,
+      "expected": 8,
+      "matches": true,
+      "evidence": "BTF cred.gid"
+    },
+    {
+      "field": "cred_suid",
+      "value": 12,
+      "line": 101,
+      "expected": 12,
+      "matches": true,
+      "evidence": "BTF cred.suid"
+    },
+    {
+      "field": "cred_sgid",
+      "value": 16,
+      "line": 102,
+      "expected": 16,
+      "matches": true,
+      "evidence": "BTF cred.sgid"
+    },
+    {
+      "field": "cred_euid",
+      "value": 20,
+      "line": 103,
+      "expected": 20,
+      "matches": true,
+      "evidence": "BTF cred.euid"
+    },
+    {
+      "field": "cred_egid",
+      "value": 24,
+      "line": 104,
+      "expected": 24,
+      "matches": true,
+      "evidence": "BTF cred.egid"
+    },
+    {
+      "field": "cred_fsuid",
+      "value": 28,
+      "line": 105,
+      "expected": 28,
+      "matches": true,
+      "evidence": "BTF cred.fsuid"
+    },
+    {
+      "field": "cred_fsgid",
+      "value": 32,
+      "line": 106,
+      "expected": 32,
+      "matches": true,
+      "evidence": "BTF cred.fsgid"
+    },
+    {
+      "field": "cred_securebits",
+      "value": 36,
+      "line": 107,
+      "expected": 36,
+      "matches": true,
+      "evidence": "BTF cred.securebits"
+    },
+    {
+      "field": "cred_cap_inh",
+      "value": 40,
+      "line": 108,
+      "expected": 40,
+      "matches": true,
+      "evidence": "BTF cred.cap_inheritable"
+    },
+    {
+      "field": "cred_cap_prm",
+      "value": 48,
+      "line": 109,
+      "expected": 48,
+      "matches": true,
+      "evidence": "BTF cred.cap_permitted"
+    },
+    {
+      "field": "cred_cap_eff",
+      "value": 56,
+      "line": 110,
+      "expected": 56,
+      "matches": true,
+      "evidence": "BTF cred.cap_effective"
+    },
+    {
+      "field": "cred_cap_bset",
+      "value": 64,
+      "line": 111,
+      "expected": 64,
+      "matches": true,
+      "evidence": "BTF cred.cap_bset"
+    },
+    {
+      "field": "cred_cap_amb",
+      "value": 72,
+      "line": 112,
+      "expected": 72,
+      "matches": true,
+      "evidence": "BTF cred.cap_ambient"
+    },
+    {
+      "field": "cred_security",
+      "value": 120,
+      "line": 113,
+      "expected": 120,
+      "matches": true,
+      "evidence": "BTF cred.security"
+    },
+    {
+      "field": "cred_user",
+      "value": 128,
+      "line": 114,
+      "expected": 128,
+      "matches": true,
+      "evidence": "BTF cred.user"
+    },
+    {
+      "field": "cred_user_ns",
+      "value": 136,
+      "line": 115,
+      "expected": 136,
+      "matches": true,
+      "evidence": "BTF cred.user_ns"
+    },
+    {
+      "field": "cred_ucounts",
+      "value": 144,
+      "line": 116,
+      "expected": 144,
+      "matches": true,
+      "evidence": "BTF cred.ucounts"
+    },
+    {
+      "field": "cred_group_info",
+      "value": 152,
+      "line": 117,
+      "expected": 152,
+      "matches": true,
+      "evidence": "BTF cred.group_info"
+    },
+    {
+      "field": "fops_llseek",
+      "value": 8,
+      "line": 124,
+      "expected": 8,
+      "matches": true,
+      "evidence": "BTF file_operations.llseek"
+    },
+    {
+      "field": "fops_read",
+      "value": 16,
+      "line": 125,
+      "expected": 16,
+      "matches": true,
+      "evidence": "BTF file_operations.read"
+    },
+    {
+      "field": "fops_write",
+      "value": 24,
+      "line": 126,
+      "expected": 24,
+      "matches": true,
+      "evidence": "BTF file_operations.write"
+    },
+    {
+      "field": "fops_read_iter",
+      "value": 32,
+      "line": 127,
+      "expected": 32,
+      "matches": true,
+      "evidence": "BTF file_operations.read_iter"
+    },
+    {
+      "field": "fops_write_iter",
+      "value": 40,
+      "line": 128,
+      "expected": 40,
+      "matches": true,
+      "evidence": "BTF file_operations.write_iter"
+    },
+    {
+      "field": "fops_ioctl",
+      "value": 80,
+      "line": 129,
+      "expected": 80,
+      "matches": true,
+      "evidence": "BTF file_operations.unlocked_ioctl"
+    },
+    {
+      "field": "fops_compat_ioctl",
+      "value": 88,
+      "line": 130,
+      "expected": 88,
+      "matches": true,
+      "evidence": "BTF file_operations.compat_ioctl"
+    },
+    {
+      "field": "fops_mmap",
+      "value": 96,
+      "line": 131,
+      "expected": 96,
+      "matches": true,
+      "evidence": "BTF file_operations.mmap"
+    },
+    {
+      "field": "fops_open",
+      "value": 112,
+      "line": 132,
+      "expected": 112,
+      "matches": true,
+      "evidence": "BTF file_operations.open"
+    },
+    {
+      "field": "fops_release",
+      "value": 128,
+      "line": 133,
+      "expected": 128,
+      "matches": true,
+      "evidence": "BTF file_operations.release"
+    },
+    {
+      "field": "fops_splice_read",
+      "value": 200,
+      "line": 134,
+      "expected": 200,
+      "matches": true,
+      "evidence": "BTF file_operations.splice_read"
+    },
+    {
+      "field": "fops_show_fdinfo",
+      "value": 224,
+      "line": 135,
+      "expected": 224,
+      "matches": true,
+      "evidence": "BTF file_operations.show_fdinfo"
+    },
+    {
+      "field": "rt_mutex_waiters",
+      "value": 8,
+      "line": 94,
+      "expected": 8,
+      "matches": true,
+      "evidence": "BTF rt_mutex_base.waiters"
+    },
+    {
+      "field": "rt_mutex_owner",
+      "value": 24,
+      "line": 95,
+      "expected": 24,
+      "matches": true,
+      "evidence": "BTF rt_mutex_base.owner"
+    },
+    {
+      "field": "waiter_size",
+      "value": 88,
+      "line": 83,
+      "expected": 88,
+      "matches": true,
+      "evidence": "BTF sizeof(rt_mutex_waiter)"
+    },
+    {
+      "field": "rt_mutex_size",
+      "value": 32,
+      "line": 93,
+      "expected": 32,
+      "matches": true,
+      "evidence": "BTF sizeof(rt_mutex_base)"
+    },
+    {
+      "field": "mm_struct_size",
+      "value": 992,
+      "line": 120,
+      "expected": 992,
+      "matches": true,
+      "evidence": "BTF sizeof(mm_struct)"
+    },
+    {
+      "field": "struct_page_size",
+      "value": 64,
+      "line": 121,
+      "expected": 64,
+      "matches": true,
+      "evidence": "BTF sizeof(page)"
+    },
+    {
+      "field": "kimage_text_base",
+      "value": 18446743798965927936,
+      "line": 16,
+      "expected": 18446743798965927936,
+      "matches": true,
+      "evidence": "Philips _stext link-time address"
+    },
+    {
+      "field": "waiter_compact",
+      "value": 1,
+      "line": 82,
+      "expected": 1,
+      "matches": true,
+      "evidence": "rt_mutex_waiter direct prio and deadline fields, no nested rb-priority structs"
+    }
+  ],
+  "explicit_mismatches": [],
+  "omitted_profile_fields_using_runtime_defaults": [
+    {
+      "macro": "P0_PAGE_OFFSET",
+      "field": "page_offset",
+      "effective_default": "0xffffff8000000000"
+    },
+    {
+      "macro": "DIRECT_MAP_BASE",
+      "field": "direct_map_base",
+      "effective_default": "0xffffff8000000000"
+    },
+    {
+      "macro": "DIRECT_MAP_END",
+      "field": "direct_map_end",
+      "effective_default": "0xffffff9000000000"
+    },
+    {
+      "macro": "VMEMMAP_START",
+      "field": "vmemmap_start",
+      "effective_default": "0xfffffffe00000000"
+    },
+    {
+      "macro": "MM_ORDER",
+      "field": "mm_slab_order",
+      "effective_default": "0x2"
+    },
+    {
+      "macro": "MM_OWNER_OFF",
+      "field": "mm_owner",
+      "effective_default": "0x410",
+      "btf_expected": "0x348",
+      "matches_btf": false
+    },
+    {
+      "macro": "STRUCT_PAGE_COMPOUND_HEAD_OFF",
+      "field": "struct_page_compound_head",
+      "effective_default": "0x8"
+    },
+    {
+      "macro": "STRUCT_PAGE_TYPE_OFF",
+      "field": "struct_page_type",
+      "effective_default": "0x30"
+    },
+    {
+      "macro": "STRUCT_SLAB_CACHE_OFF",
+      "field": "struct_slab_cache",
+      "effective_default": "0x8",
+      "btf_expected": "0x18",
+      "matches_btf": false
+    },
+    {
+      "macro": "CRED15_SIZE",
+      "field": "cred_size",
+      "effective_default": "0xb0",
+      "btf_expected": "0xb0",
+      "matches_btf": true
+    },
+    {
+      "macro": "TASK_SECURITY_SIZE",
+      "field": "task_security_size",
+      "effective_default": "0x40",
+      "btf_expected": "0x18",
+      "matches_btf": false
+    },
+    {
+      "macro": "TASK_SECURITY_OSID_OFF",
+      "field": "task_security_osid",
+      "effective_default": "0x0"
+    },
+    {
+      "macro": "TASK_SECURITY_SID_OFF",
+      "field": "task_security_sid",
+      "effective_default": "0x4"
+    },
+    {
+      "macro": "USER_STRUCT_SIZE",
+      "field": "user_struct_size",
+      "effective_default": "0x80",
+      "btf_expected": "0xa8",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_STRUCT_COUNT_OFF",
+      "field": "user_struct_count",
+      "effective_default": "0x0"
+    },
+    {
+      "macro": "UCOUNTS_SIZE",
+      "field": "ucounts_size",
+      "effective_default": "0x100",
+      "btf_expected": "0x90",
+      "matches_btf": false
+    },
+    {
+      "macro": "UCOUNTS_NS_OFF",
+      "field": "ucounts_ns",
+      "effective_default": "0x10"
+    },
+    {
+      "macro": "UCOUNTS_COUNT_OFF",
+      "field": "ucounts_count",
+      "effective_default": "0x1c"
+    },
+    {
+      "macro": "GROUP_INFO_USAGE_OFF",
+      "field": "group_info_usage",
+      "effective_default": "0x0"
+    },
+    {
+      "macro": "GROUP_INFO_NGROUPS_OFF",
+      "field": "group_info_ngroups",
+      "effective_default": "0x4"
+    },
+    {
+      "macro": "GROUP_INFO_GID_OFF",
+      "field": "group_info_gid",
+      "effective_default": "0x8"
+    },
+    {
+      "macro": "USER_NS_SIZE",
+      "field": "user_ns_size",
+      "effective_default": "0x100",
+      "btf_expected": "0x290",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_GID_MAP_OFF",
+      "field": "user_ns_gid_map",
+      "effective_default": "0x40",
+      "btf_expected": "0x48",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_PROJID_MAP_OFF",
+      "field": "user_ns_projid_map",
+      "effective_default": "0x80",
+      "btf_expected": "0x90",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_NS_OFF",
+      "field": "user_ns_ns",
+      "effective_default": "0xd8",
+      "btf_expected": "0xf0",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_UCOUNTS_OFF",
+      "field": "user_ns_ucounts",
+      "effective_default": "0xf0",
+      "btf_expected": "0x208",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_UCOUNT_MAX_OFF",
+      "field": "user_ns_ucount_max",
+      "effective_default": "0xf8",
+      "btf_expected": "0x210",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_UCOUNT_MAX_COUNT",
+      "field": "user_ns_ucount_max_count",
+      "effective_default": "0x1",
+      "btf_expected": "0xe",
+      "matches_btf": false
+    },
+    {
+      "macro": "NS_COMMON_COUNT_OFF",
+      "field": "ns_common_count",
+      "effective_default": "0x14"
+    },
+    {
+      "macro": "UID_GID_MAP_SIZE",
+      "field": "uid_gid_map_size",
+      "effective_default": "0x40",
+      "btf_expected": "0x48",
+      "matches_btf": false
+    },
+    {
+      "macro": "UID_GID_MAP_NR_EXTENTS_OFF",
+      "field": "uid_gid_map_nr_extents",
+      "effective_default": "0x0"
+    },
+    {
+      "macro": "UID_GID_MAP_EXTENT_OFF",
+      "field": "uid_gid_map_extent",
+      "effective_default": "0x4",
+      "btf_expected": "0x8",
+      "matches_btf": false
+    },
+    {
+      "macro": "FAKE_CRED_OFF",
+      "field": "payload_fake_cred",
+      "effective_default": "0xe00"
+    },
+    {
+      "macro": "FAKE_SEC_BLOB_OFF",
+      "field": "payload_fake_security",
+      "effective_default": "0xec0"
+    },
+    {
+      "macro": "FAKE_USER_STRUCT_OFF",
+      "field": "payload_fake_user",
+      "effective_default": "0xf00"
+    },
+    {
+      "macro": "FAKE_UCOUNTS_OFF",
+      "field": "payload_fake_ucounts",
+      "effective_default": "0xf80"
+    },
+    {
+      "macro": "FAKE_GROUP_INFO_OFF",
+      "field": "payload_fake_group_info",
+      "effective_default": "0xdb0"
+    },
+    {
+      "macro": "FAKE_USER_NS_OFF",
+      "field": "payload_fake_user_ns",
+      "effective_default": "0x1200"
+    }
+  ],
+  "default_btf_mismatches": [
+    {
+      "macro": "MM_OWNER_OFF",
+      "field": "mm_owner",
+      "effective_default": "0x410",
+      "btf_expected": "0x348",
+      "matches_btf": false
+    },
+    {
+      "macro": "STRUCT_SLAB_CACHE_OFF",
+      "field": "struct_slab_cache",
+      "effective_default": "0x8",
+      "btf_expected": "0x18",
+      "matches_btf": false
+    },
+    {
+      "macro": "TASK_SECURITY_SIZE",
+      "field": "task_security_size",
+      "effective_default": "0x40",
+      "btf_expected": "0x18",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_STRUCT_SIZE",
+      "field": "user_struct_size",
+      "effective_default": "0x80",
+      "btf_expected": "0xa8",
+      "matches_btf": false
+    },
+    {
+      "macro": "UCOUNTS_SIZE",
+      "field": "ucounts_size",
+      "effective_default": "0x100",
+      "btf_expected": "0x90",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_SIZE",
+      "field": "user_ns_size",
+      "effective_default": "0x100",
+      "btf_expected": "0x290",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_GID_MAP_OFF",
+      "field": "user_ns_gid_map",
+      "effective_default": "0x40",
+      "btf_expected": "0x48",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_PROJID_MAP_OFF",
+      "field": "user_ns_projid_map",
+      "effective_default": "0x80",
+      "btf_expected": "0x90",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_NS_OFF",
+      "field": "user_ns_ns",
+      "effective_default": "0xd8",
+      "btf_expected": "0xf0",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_UCOUNTS_OFF",
+      "field": "user_ns_ucounts",
+      "effective_default": "0xf0",
+      "btf_expected": "0x208",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_UCOUNT_MAX_OFF",
+      "field": "user_ns_ucount_max",
+      "effective_default": "0xf8",
+      "btf_expected": "0x210",
+      "matches_btf": false
+    },
+    {
+      "macro": "USER_NS_UCOUNT_MAX_COUNT",
+      "field": "user_ns_ucount_max_count",
+      "effective_default": "0x1",
+      "btf_expected": "0xe",
+      "matches_btf": false
+    },
+    {
+      "macro": "UID_GID_MAP_SIZE",
+      "field": "uid_gid_map_size",
+      "effective_default": "0x40",
+      "btf_expected": "0x48",
+      "matches_btf": false
+    },
+    {
+      "macro": "UID_GID_MAP_EXTENT_OFF",
+      "field": "uid_gid_map_extent",
+      "effective_default": "0x4",
+      "btf_expected": "0x8",
+      "matches_btf": false
+    }
+  ],
+  "selection": {
+    "profile_release": "5.15.180-android14-11",
+    "extracted_kernel_release": "5.15.180-android14-11-00042-g766efc243647-dirty",
+    "matches_extracted_release": false,
+    "collides_with_existing_tcl_key": true
+  },
+  "physical_conversion": {
+    "kernel_phys_load_interpreted_as": "physical _text load address, as documented in repository",
+    "init_task_expected_physical": "0x2899c4c0",
+    "init_task_physical_using_profile_base": "0x2898c4c0",
+    "error_bytes": -65536
+  },
+  "profile_has_analysis_only": false,
+  "last_code_token": "\n)",
+  "profile_lines": 136
+}
