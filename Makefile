@@ -162,3 +162,9 @@ tcl-v643-uring-perf-witness-test:
 tcl-v643-sid-probe-model-test:
 	$(CC) -O2 -Wall tests/tcl_v643_sid_probe_model.c -o /tmp/tcl-v643-sid-probe-model
 	/tmp/tcl-v643-sid-probe-model
+
+# Host-only test: does not build or execute the exploit implementation.
+.PHONY: philips-profile-guard-test
+philips-profile-guard-test:
+	$(CC) -O2 -Wall -Isrc/devices tests/philips_profile_guard.c -o /tmp/philips-profile-guard
+	/tmp/philips-profile-guard

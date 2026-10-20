@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 enum ghost_stack_overlay_route {
+  GHOST_STACK_OVERLAY_UNVERIFIED = 255,
   GHOST_STACK_OVERLAY_SEQPACKET = 0,
   GHOST_STACK_OVERLAY_TCL_V643_PSELECT6 = 1,
   /* Exact V643 Full-LTO geometry validated in the ARM32 compat syscall
@@ -16,6 +17,7 @@ enum ghost_stack_overlay_route {
 };
 
 enum ghost_reclaim_route {
+  GHOST_RECLAIM_UNVERIFIED = 255,
   /* Original choreography measured on the Sabrina reference device. */
   GHOST_RECLAIM_REFERENCE_SABRINA = 0,
   /* TCL has matching order-2 object geometry, but its CPU/node-partial and
@@ -150,6 +152,13 @@ struct kernel_offsets {
   uint32_t fops_open, fops_release, fops_splice_read, fops_show_fdinfo;
 };
 
+/* Unknown routes must stay blocked even if analysis_only is cleared. */
+static inline int ghost_profile_requires_analysis(const struct kernel_offsets *profile) {
+  return profile->analysis_only ||
+         profile->stack_overlay_route == GHOST_STACK_OVERLAY_UNVERIFIED ||
+         profile->reclaim_route == GHOST_RECLAIM_UNVERIFIED;
+}
+
 #define OFFSETS_ENTRY(uname, ...) { .uname_r = uname, __VA_ARGS__ }
 
 #define STRUCT_OFFSETS_6_12 \
@@ -197,6 +206,7 @@ struct kernel_offsets {
 static const struct kernel_offsets known_offsets[] = {
 #include "sabrina/offsets.h"
 #include "tcl_v643/offsets.h"
+#include "philips_909_tpm231/offsets.h"
   { .uname_r = NULL }
 };
 

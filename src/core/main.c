@@ -95,7 +95,9 @@ static int print_profile_info(const char *release_override) {
       break;
   }
   printf("stack_overlay_route=%s\n", stack_route);
-  const char *reclaim_route = "reference-sabrina";
+  const char *reclaim_route = "unknown";
+  if (profile->reclaim_route == GHOST_RECLAIM_REFERENCE_SABRINA)
+    reclaim_route = "reference-sabrina";
   if (profile->reclaim_route == GHOST_RECLAIM_TCL_V643_UNPROVEN)
     reclaim_route = "tcl-v643-unproven";
   else if (profile->reclaim_route == GHOST_RECLAIM_TCL_V643_EXACT)
@@ -121,7 +123,7 @@ static int print_profile_info(const char *release_override) {
   printf("kernel_phys_load=0x%016llx\n",
          (unsigned long long)profile->kernel_phys_load);
   printf("primitive_arming=%s\n",
-         profile->analysis_only ? "REFUSED" : "profile-eligible");
+         ghost_profile_requires_analysis(profile) ? "REFUSED" : "profile-eligible");
   return 0;
 }
 
@@ -139,7 +141,7 @@ static int select_offsets(void) {
 #endif
   const struct kernel_offsets *candidate = find_offsets_for_release(profile_release);
   if (candidate) {
-      if (candidate->analysis_only) {
+      if (ghost_profile_requires_analysis(candidate)) {
 #if defined(TCL_V643_LAB_ARMING) && TCL_V643_LAB_ARMING
         if (candidate->stack_overlay_route ==
                 GHOST_STACK_OVERLAY_TCL_V643_NEWSELECT_COMPAT &&

@@ -1,4 +1,20 @@
-# GhostLock for TCL T653T01
+# GhostLock: TCL T653T01 and Philips OLED909 analysis
+
+## Philips OLED909 status
+
+The Philips OLED909 / TPM231WW R.201.100.146.220 profile is registered for
+`5.15.180-android14-11-00042-g766efc243647-dirty`, but remains **analysis-only**.
+Its symbol and BTF metadata are integrated; Philips runtime routes, RAM bounds,
+SLUB geometry and CFI callback compatibility have not been validated. The
+profile refuses activation, including when its `analysis_only` flag is cleared
+while either route is still marked unverified.
+
+Run `make philips-profile-guard-test` for the host-only metadata/guard check.
+This test does not build or execute the exploit. The patch retained in `docs`
+is the original integration artifact; its source changes are now integrated
+and it should not be reapplied. No working Philips root release is claimed.
+
+## TCL T653T01 status
 
 Experimental temporary-root port for the **TCL C855 / T653T01** running:
 
